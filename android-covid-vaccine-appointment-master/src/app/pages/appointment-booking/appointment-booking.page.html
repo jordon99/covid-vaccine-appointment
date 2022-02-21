@@ -1,0 +1,41 @@
+<app-header></app-header>
+
+<ion-content>
+  <ion-card style="border-radius: 0.8em;">
+    <ion-card-content style="padding: 0">
+      <div class="agent-section">
+        <ion-item color="transparent" lines="none">
+          <ion-label>Agent Id: {{ agentId }}</ion-label>
+        </ion-item>
+      </div>
+      <div class="form-section">
+        <ion-item color="transparent" lines="none">
+          <ion-label position="stacked">Date</ion-label>
+          <ion-input type="date" [(ngModel)]="appDate"></ion-input>
+        </ion-item>
+        <ion-item color="transparent" lines="none">
+          <ion-label position="stacked">Time</ion-label>
+          <ion-input type="time" [(ngModel)]="appTime"></ion-input>
+        </ion-item>
+        <ion-item color="transparent" lines="none">
+          <ion-label position="stacked">OHIP</ion-label>
+          <ion-input type="number" placeholder="OHIP Number" [(ngModel)]="appOHIP"></ion-input>
+        </ion-item>
+        <ion-item color="transparent" lines="none">
+          <ion-label position="stacked">Email</ion-label>
+          <ion-input type="email" placeholder="Email" [(ngModel)]="appEmail"></ion-input>
+        </ion-item>
+        <ion-item color="transparent" lines="none">
+          <ion-label position="stacked">Phone</ion-label>
+          <ion-input type="text" placeholder="Phone Number" [(ngModel)]="appPhone"></ion-input>
+        </ion-item>
+      </div>
+      <br>
+      <ion-item>
+        <ion-button size="small" (click)="addAppointment()">Add Appointment</ion-button>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+<app-footer></app-footer>

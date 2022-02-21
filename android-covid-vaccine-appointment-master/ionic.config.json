@@ -1,0 +1,7 @@
+{
+  "name": "Covid19Vaccine",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

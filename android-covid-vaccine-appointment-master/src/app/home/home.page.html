@@ -1,0 +1,64 @@
+<app-header></app-header>
+<ion-content [fullscreen]="true">
+  <div id="">
+    <ion-card style="border-radius: 0.8em" class="top-card">
+      <ion-card-content style="padding: 0">
+        <div class="agent-section">
+          <ion-item color="transparent" lines="none">
+            <ion-label position="fixed">Agent Id</ion-label>
+            <ion-input size="small" required="true" placeholder="Enter agent id" [(ngModel)]="agentId"></ion-input>
+          </ion-item>
+        </div>
+        <div class="load-section">
+          <ion-item lines="none" style="display: table; margin: auto; background-color: transparent;" color="transparent">
+            <ion-button size="small" (click)="loadAppointmentsFromFile()">Load Appointments</ion-button>
+            <ion-button size="small" [disabled]="!agentId" (click)="gotoBooking()">Book Appointment</ion-button>
+          </ion-item>
+        </div>
+        <div class="delete-section">
+          <ion-item color="transparent" lines="none">
+            <ion-label>Delete Appointment</ion-label>
+            <ion-input size="small" required="true" placeholder="Enter appointment key" [(ngModel)]="appKey"></ion-input>
+          </ion-item>
+          <ion-item color="transparent" lines="none">
+            <ion-button size="small" (click)="deleteAppointment()">Confirm Deletion</ion-button>
+          </ion-item>
+        </div>
+      </ion-card-content>
+    </ion-card>
+    <br><br>
+    <ion-item color="transparent" lines="none">
+      <ion-text style="color: green; font-weight: 700">Total Appointments: {{count}}</ion-text>
+    </ion-item>
+    <ion-card class="appoint-list-card">
+      <ion-card-content>
+        <ng-container *ngFor="let appointment of appointments; let i = index">
+          <div>
+            <ion-item color="transparent" lines="none">
+              <ion-button size="small" slot="end" (click)="delete(appointment.key)">Delete</ion-button>
+              <ion-label size="small" slot="start">Key: {{appointment.key}}</ion-label>
+            </ion-item>
+            <ion-item color="transparent" lines="none">
+              <ion-label size="small" slot="start">Date: {{appointment.appDate}}</ion-label>
+              <ion-label size="small" slot="end">Time: {{appointment.appTime}}</ion-label>
+            </ion-item>
+            <ion-item color="transpanrent" lines="none">
+              <ion-label size="small">OHIP: {{appointment.appOHIP}}</ion-label>
+            </ion-item>
+            <ion-item color="transparent" lines="none">
+              <ion-label size="small">Email: {{appointment.appEmail}}</ion-label>
+            </ion-item>
+            <ion-item color="transparent" lines="none">
+              <ion-label size="small">Phone: {{appointment.appPhone}}</ion-label>
+            </ion-item>
+            <ion-item color="transparent" lines="none">
+              <ion-label size="small">Agent: {{appointment.appAgent}}</ion-label>
+            </ion-item>
+          </div>
+          <hr color="#333" *ngIf="i < (count - 1)">
+        </ng-container>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
+<app-footer></app-footer>

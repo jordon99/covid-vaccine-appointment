@@ -1,0 +1,12 @@
+.app-version {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin-top:5px;
+    flex-wrap: wrap;
+
+    span {
+        display:block;
+        margin:5px;
+    }
+}

@@ -1,0 +1,10 @@
+<div class="battery-wrapper">
+  <div class="battery-status">
+    <div class="battery-bg" [ngStyle]="{'width': bLevel+'%'}"></div>
+    <p class="battery-level">{{bLevel}}%</p>
+    <div class="battery-notch"></div>
+  </div>
+  <p class="battery-plugged" *ngIf="bPlug">
+    {{msg}}
+  </p>
+</div>

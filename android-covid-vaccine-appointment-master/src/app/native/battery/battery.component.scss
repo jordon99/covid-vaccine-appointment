@@ -1,0 +1,52 @@
+
+.battery-status {
+    position:relative;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    height:30px;
+    width:60px;
+    border-radius:5px;
+    border:2px solid #AAA;
+    background:black;
+
+    .battery-bg {
+        height:100%;
+        background:greenyellow;
+        position:absolute;
+        top:0;
+        left:0;
+        border-radius:3px;
+        padding:3px;
+        z-index:1;
+    }
+
+    .battery-level {
+        position:relative;
+        text-align: center;
+        color:black;
+        z-index:2;
+    }
+
+    .battery-notch {
+        position:absolute;
+        right:-10px;
+        top:50%;
+        z-index:5;
+        transform:translateY(-50%);
+        border-radius:3px;
+        width:10px;
+        height:15px;
+        background:#AAA;
+    }
+}
+
+.battery-wrapper {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+
+    .battery-plugged {
+        margin-left:20px;
+    }
+}
